@@ -52,6 +52,7 @@ type SimpleStatus struct {
 }
 
 // +kubebuilder:object:root=true
+// +kubebuilder:storageversion
 
 // Simple is the Schema for the simples API
 type Simple struct {
