@@ -1,0 +1,74 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.2.5
+  creationTimestamp: null
+  name: simples.study.kni-arch.org
+spec:
+  group: study.kni-arch.org
+  names:
+    kind: Simple
+    listKind: SimpleList
+    plural: simples
+    singular: simple
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      description: Simple is the Schema for the simples API
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          description: SimpleSpec defines the desired state of Simple
+          properties:
+            foo:
+              description: Foo is an example field of Simple. Edit Simple_types.go
+                to remove/update
+              type: string
+            subStruct:
+              description: SubStruct is an optional sub-structure
+              properties:
+                a:
+                  type: string
+                b:
+                  type: integer
+              required:
+              - a
+              - b
+              type: object
+          type: object
+        status:
+          description: SimpleStatus defines the observed state of Simple
+          properties:
+            bar:
+              description: Bar is an example status field.
+              type: string
+          type: object
+      type: object
+  version: v1alpha1
+  versions:
+  - name: v1alpha1
+    served: true
+    storage: true
+  - name: v1alpha2
+    served: true
+    storage: false
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
