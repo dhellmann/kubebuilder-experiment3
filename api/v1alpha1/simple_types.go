@@ -30,6 +30,16 @@ type SimpleSpec struct {
 
 	// Foo is an example field of Simple. Edit Simple_types.go to remove/update
 	Foo string `json:"foo,omitempty"`
+
+	// SubStruct is an optional sub-structure
+	// +optional
+	SubStruct *ExampleStruct `json:"subStruct"`
+}
+
+// ExampleStruct is an example of more complex data
+type ExampleStruct struct {
+	A string `json:"a"`
+	B int    `json:"b"`
 }
 
 // SimpleStatus defines the observed state of Simple

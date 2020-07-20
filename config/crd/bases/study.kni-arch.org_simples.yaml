@@ -38,6 +38,17 @@ spec:
               description: Foo is an example field of Simple. Edit Simple_types.go
                 to remove/update
               type: string
+            subStruct:
+              description: SubStruct is an optional sub-structure
+              properties:
+                a:
+                  type: string
+                b:
+                  type: integer
+              required:
+              - a
+              - b
+              type: object
           type: object
         status:
           description: SimpleStatus defines the observed state of Simple
