@@ -41,6 +41,10 @@ spec:
           type: object
         status:
           description: SimpleStatus defines the observed state of Simple
+          properties:
+            bar:
+              description: Bar is an example status field.
+              type: string
           type: object
       type: object
   version: v1alpha1
