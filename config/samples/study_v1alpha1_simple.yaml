@@ -1,0 +1,7 @@
+apiVersion: study.kni-arch.org/v1alpha1
+kind: Simple
+metadata:
+  name: simple-sample
+spec:
+  # Add fields here
+  foo: bar
