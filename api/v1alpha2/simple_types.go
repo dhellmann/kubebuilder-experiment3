@@ -28,8 +28,8 @@ type SimpleSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Simple. Edit Simple_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// LessSillyName is an example field of Simple. Edit Simple_types.go to remove/update
+	LessSillyName string `json:"lessSillyName,omitempty"`
 }
 
 // SimpleStatus defines the observed state of Simple

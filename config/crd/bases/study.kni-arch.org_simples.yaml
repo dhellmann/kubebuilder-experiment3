@@ -82,8 +82,8 @@ spec:
           spec:
             description: SimpleSpec defines the desired state of Simple
             properties:
-              foo:
-                description: Foo is an example field of Simple. Edit Simple_types.go
+              lessSillyName:
+                description: LessSillyName is an example field of Simple. Edit Simple_types.go
                   to remove/update
                 type: string
             type: object
