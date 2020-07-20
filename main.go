@@ -29,6 +29,7 @@ import (
 	corev1 "k8s.io/api/core/v1"
 
 	studyv1alpha1 "github.com/dhellmann/kubebuilder-experiment3/api/v1alpha1"
+	studyv1alpha2 "github.com/dhellmann/kubebuilder-experiment3/api/v1alpha2"
 	"github.com/dhellmann/kubebuilder-experiment3/controllers"
 	// +kubebuilder:scaffold:imports
 )
@@ -43,6 +44,7 @@ func init() {
 
 	_ = studyv1alpha1.AddToScheme(scheme)
 	_ = corev1.AddToScheme(scheme)
+	_ = studyv1alpha2.AddToScheme(scheme)
 	// +kubebuilder:scaffold:scheme
 }
 

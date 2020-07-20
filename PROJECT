@@ -4,4 +4,7 @@ resources:
 - group: study
   kind: Simple
   version: v1alpha1
+- group: study
+  kind: Simple
+  version: v1alpha2
 version: "2"
