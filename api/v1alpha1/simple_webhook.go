@@ -14,27 +14,27 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package v1alpha2
+package v1alpha1
 
 import (
-	runtime "k8s.io/apimachinery/pkg/runtime"
-	"sigs.k8s.io/controller-runtime/pkg/webhook"
-
+	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
+	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
 // log is for logging in this package.
 var simplelog = logf.Log.WithName("simple-resource")
 
-// SetupWebhookWithManager registers the web hooks for v1alpha2.Simple
 func (r *Simple) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(r).
 		Complete()
 }
 
-// +kubebuilder:webhook:path=/mutate-study-kni-arch-org-v1alpha2-simple,mutating=true,failurePolicy=fail,groups=study.kni-arch.org,resources=simples,verbs=create;update,versions=v1alpha2,name=msimple.kni-arch.org
+// EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
+
+// +kubebuilder:webhook:path=/mutate-study-kni-arch-org-v1alpha1-simple,mutating=true,failurePolicy=fail,groups=study.kni-arch.org,resources=simples,verbs=create;update,versions=v1alpha1,name=msimple.kb.io
 
 var _ webhook.Defaulter = &Simple{}
 
@@ -42,13 +42,14 @@ var _ webhook.Defaulter = &Simple{}
 func (r *Simple) Default() {
 	simplelog.Info("default", "name", r.Name)
 
-	if r.Spec.LessSillyName == "" {
-		r.Spec.LessSillyName = "a good default"
+	if r.Spec.Foo == "" {
+		r.Spec.Foo = "a good default"
 	}
+
 }
 
 // TODO(user): change verbs to "verbs=create;update;delete" if you want to enable deletion validation.
-// +kubebuilder:webhook:verbs=create;update,path=/validate-study-kni-arch-org-v1alpha2-simple,mutating=false,failurePolicy=fail,groups=study.kni-arch.org,resources=simples,versions=v1alpha2,name=vsimple.kni-arch.org
+// +kubebuilder:webhook:verbs=create;update,path=/validate-study-kni-arch-org-v1alpha1-simple,mutating=false,failurePolicy=fail,groups=study.kni-arch.org,resources=simples,versions=v1alpha1,name=vsimple.kb.io
 
 var _ webhook.Validator = &Simple{}
 
@@ -70,6 +71,5 @@ func (r *Simple) ValidateUpdate(old runtime.Object) error {
 func (r *Simple) ValidateDelete() error {
 	simplelog.Info("validate delete", "name", r.Name)
 
-	// TODO(user): fill in your validation logic upon object deletion.
 	return nil
 }

@@ -19,6 +19,9 @@ func (src *Simple) ConvertTo(dstRaw conversion.Hub) error {
 	// renamed field
 	dst.Spec.Foo = src.Spec.LessSillyName
 
+	// ObjectMeta
+	dst.ObjectMeta = src.ObjectMeta
+
 	return nil
 }
 
@@ -31,6 +34,9 @@ func (dst *Simple) ConvertFrom(srcRaw conversion.Hub) error {
 
 	// renamed field
 	dst.Spec.LessSillyName = src.Spec.Foo
+
+	// ObjectMeta
+	dst.ObjectMeta = src.ObjectMeta
 
 	return nil
 }

@@ -1,0 +1,7 @@
+---
+apiVersion: study.kni-arch.org/v1alpha1
+kind: Simple
+metadata:
+  name: an-example
+spec:
+  foo: the-value-goes-here
